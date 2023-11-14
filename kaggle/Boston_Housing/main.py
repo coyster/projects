@@ -24,6 +24,7 @@ def load_boston_housing():
         )
     else:
         data = np.load(save_path)
+        print(data)
         x_train = data["x_train"]
         y_train = data["y_train"]
         x_test = data["x_test"]
@@ -51,6 +52,7 @@ def build_model():
 
 def train_model(model, x_train, y_train, x_test=None, y_test=None):
     model.fit(x_train, y_train, epochs=200, validation_split=0.2)
+    
     return model
 
 
