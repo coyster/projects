@@ -3,7 +3,7 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from tensorflow.
 
 def get_data(data_path: str) -> pd.DataFrame:
     df = pd.read_csv(os.path.join(os.path.dirname(__file__), data_path))
@@ -46,7 +46,8 @@ def correlation_matrix(df: pd.DataFrame, show=False, target_col=None) -> pd.Data
 #####################################################
 
 df = get_data("data/archive/HR_Analytics.csv")
-corr_df = correlation_matrix(df, show=False)
+corr_df = correlation_matrix(df, show=False, target_col="JobSatisfaction")
+# corr_df = correlation_matrix(df, show=True, target_col="JobSatisfaction")
 print(corr_df["JobSatisfaction"])
 
 
